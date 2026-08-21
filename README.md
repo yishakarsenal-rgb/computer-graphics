@@ -14,13 +14,17 @@ Code Execution:- Run C++ code directly in the browser to view standard console o
 2. Comprehensive Course Curriculum & Theory
 
 Chapter 1: Overview & Video Display Devices
-Display hardware mechanisms: Refresh CRT, Raster-Scan vs. Random-Scan (Vector), LCD, LED, and Plasma.Color techniques: Beam-Penetration vs. Shadow-Mask methods.
+
+- Display hardware mechanisms: Refresh CRT, Raster-Scan vs. Random-Scan (Vector), LCD, LED, and Plasma.Color techniques: Beam-Penetration vs. Shadow-Mask methods.
 
 Chapter 2: Line, Circle & Primitive Drawing Algorithms
-Digital Differential Analyzer (DDA) and Bresenham’s Line Algorithms.Midpoint Circle and Ellipse derivations with 8-way and 4-way symmetry analysis.
+
+- Digital Differential Analyzer (DDA) and Bresenham’s Line Algorithms.Midpoint Circle and Ellipse derivations with 8-way and 4-way symmetry analysis.
 
 Chapter 3: 2D Transformations & Clipping
-Translation, Scaling, Rotation, and Matrix Homogeneous Coordinates.Cohen-Sutherland (Outcodes) and Liang-Barsky line clipping algorithms.
+
+- Translation, Scaling, Rotation, and Matrix Homogeneous Coordinates.Cohen-Sutherland (Outcodes) and Liang-Barsky line clipping algorithms.
 
 Chapter 4: 3D Graphics & Projections
-3D transformations ($4 \times 4$ matrices) and parallel vs. perspective projection models.
+
+- 3D transformations and parallel vs. perspective projection models.
