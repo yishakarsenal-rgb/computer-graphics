@@ -28,3 +28,11 @@ Chapter 3: 2D Transformations & Clipping
 Chapter 4: 3D Graphics & Projections
 
 - 3D transformations and parallel vs. perspective projection models.
+
+3. Timed Mock Examination Engine
+
+- 100 Question Test Bank: Multiple-choice, true/false, and code/pixel trace prediction questions.
+
+- Exam Controls: Configurable countdown timers, question flagging, and dynamic progress grids.
+
+- Analytics: Detailed score breakdowns, performance metrics by topic, and complete answer explanations.
