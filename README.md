@@ -36,3 +36,17 @@ Chapter 4: 3D Graphics & Projections
 - Exam Controls: Configurable countdown timers, question flagging, and dynamic progress grids.
 
 - Analytics: Detailed score breakdowns, performance metrics by topic, and complete answer explanations.
+
+Tech Stack
+
+- Framework: Next.js (App Router)
+
+- Library: React
+
+- Styling: Tailwind CSS
+
+- UI Components: Shadcn UI & Lucide React Icons
+
+- Code Editor: Monaco Editor
+
+- Canvas Engine: HTML5 Canvas / WebGL
