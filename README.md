@@ -38,7 +38,7 @@ Chapter 4: 3D Graphics & Projections
 
 - Analytics: Detailed score breakdowns, performance metrics by topic, and complete answer explanations.
 
-#Tech Stack
+# Tech Stack
 
 - Framework: Next.js (App Router)
 
