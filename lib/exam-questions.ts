@@ -766,7 +766,6 @@ const bank: Omit<Question, "id">[] = [
   },
 ];
 
-// Duplicate-and-vary the bank up to 100 questions so the engine can sample a full set.
 export function buildQuestionBank(): Question[] {
   const withIds: Question[] = bank.map((q, i) => ({ ...q, id: i + 1 }));
   return withIds;
@@ -783,8 +782,6 @@ export function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-// Return exactly `count` questions, sampling with repetition if the pool is smaller,
-// re-tagging repeats with fresh ids so React keys stay unique.
 export function sampleQuestions(count: number): Question[] {
   const pool = buildQuestionBank();
   const result: Question[] = [];
