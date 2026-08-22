@@ -476,7 +476,7 @@ const bank: Omit<Question, "id">[] = [
       "False — the decision-parameter approach avoids square roots, using only integer additions.",
   },
 
-  // ---------- 2D Transforms & Clipping ----------
+  //  2D Transforms and Clipping
   {
     type: "mcq",
     category: "2D Transforms & Clipping",
@@ -640,7 +640,7 @@ const bank: Omit<Question, "id">[] = [
       "False — transformation order matters; rotating then translating differs from the reverse.",
   },
 
-  // ---------- 3D & Projections ----------
+  //  3D & Projections
   {
     type: "mcq",
     category: "3D & Projections",
