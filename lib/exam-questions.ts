@@ -202,7 +202,7 @@ const bank: Omit<Question, "id">[] = [
       "True — one bit per pixel (on/off) suffices for monochrome; colour needs multiple bit planes.",
   },
 
-  // ---------- Line Algorithms ----------
+  //  Line Algorithms
   {
     type: "mcq",
     category: "Line Algorithms",
@@ -348,7 +348,7 @@ const bank: Omit<Question, "id">[] = [
       "False — DDA rounds each computed coordinate to the nearest integer to plot a pixel.",
   },
 
-  // ---------- Circle & Ellipse ----------
+  // Circle & Ellipse
   {
     type: "mcq",
     category: "Circle & Ellipse",
