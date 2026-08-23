@@ -1,6 +1,6 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
-@import 'shadcn/tailwind.css';
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -52,7 +52,6 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* LIGHT MODE — stark white background, crisp dark text */
 :root {
   color-scheme: light;
   --background: #ffffff;
@@ -91,7 +90,6 @@
   --sidebar-ring: #06b6d4;
 }
 
-/* DARK MODE — deep dark background, high-contrast text */
 .dark {
   color-scheme: dark;
   --background: #0a0a0c;
@@ -138,7 +136,6 @@
   }
 }
 
-/* Thin technical scrollbars */
 @layer utilities {
   .scrollbar-thin {
     scrollbar-width: thin;
