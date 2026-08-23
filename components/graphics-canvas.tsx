@@ -124,7 +124,6 @@ export function GraphicsCanvas({ sim, name }: { sim: SimId; name: string }) {
     setResetKey((k) => k + 1);
   }, [sim]);
 
-  // initialise on sim change
   useEffect(() => {
     reset();
   }, [reset]);
@@ -172,7 +171,6 @@ export function GraphicsCanvas({ sim, name }: { sim: SimId; name: string }) {
 
     const drawArrow = () => {
       clear(ctx);
-      // grid guide
       ctx.strokeStyle = "rgba(34,211,238,0.12)";
       ctx.lineWidth = 1;
       for (let gx = 0; gx <= W; gx += 20) {
@@ -196,7 +194,6 @@ export function GraphicsCanvas({ sim, name }: { sim: SimId; name: string }) {
         else ctx.lineTo(p.x, p.y);
       });
       ctx.stroke();
-      // pen head
       if (s.penX != null && s.penY != null) {
         ctx.fillStyle = BGI[14];
         ctx.beginPath();
@@ -268,7 +265,6 @@ export function GraphicsCanvas({ sim, name }: { sim: SimId; name: string }) {
         }
         case "ellipse": {
           clear(ctx);
-          // filled ellipse
           ctx.fillStyle = BGI[14];
           ctx.beginPath();
           ctx.ellipse(100, 100, 80, 50, 0, 0, Math.PI * 2);
@@ -276,12 +272,10 @@ export function GraphicsCanvas({ sim, name }: { sim: SimId; name: string }) {
           ctx.strokeStyle = BGI[4];
           ctx.lineWidth = 2;
           ctx.stroke();
-          // outline ellipse
           ctx.strokeStyle = BGI[4];
           ctx.beginPath();
           ctx.ellipse(300, 100, 80, 50, 0, 0, Math.PI * 2);
           ctx.stroke();
-          // sector 10deg -> 80deg (BGI angles are CCW from +x, y up; canvas y down)
           ctx.fillStyle = BGI[3];
           ctx.beginPath();
           ctx.moveTo(500, 100);
@@ -338,7 +332,6 @@ export function GraphicsCanvas({ sim, name }: { sim: SimId; name: string }) {
           break;
         }
         case "car": {
-          // trails (no cleardevice in source)
           if (s.frame === 1) clear(ctx);
           const i = s.i;
           ctx.strokeStyle = BGI[3];
