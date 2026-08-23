@@ -356,7 +356,6 @@ export function GraphicsCanvas({ sim, name }: { sim: SimId; name: string }) {
         case "movingCar": {
           clear(ctx);
           const i = s.i;
-          // wheels
           ctx.fillStyle = BGI[8];
           ctx.beginPath();
           ctx.arc(110 + i, 150, 16, 0, Math.PI * 2);
@@ -382,7 +381,6 @@ export function GraphicsCanvas({ sim, name }: { sim: SimId; name: string }) {
           clear(ctx);
           const xc = 320;
           const yc = 240;
-          // floor
           ctx.strokeStyle = BGI[8];
           ctx.lineWidth = 4;
           ctx.beginPath();
