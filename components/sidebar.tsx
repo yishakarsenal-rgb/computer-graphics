@@ -1,118 +1,100 @@
 "use client";
 
-import { PanelLeftClose, PanelLeft, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import React from "react";
+import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { sections, type SectionId } from "@/lib/sections";
+import { SECTIONS, SectionId } from "@/lib/sections";
+
+interface SidebarProps {
+  activeSection: SectionId;
+  onSelectSection: (id: SectionId) => void;
+  collapsed: boolean;
+  onToggleCollapse: () => void;
+}
 
 export function Sidebar({
-  active,
-  onSelect,
+  activeSection,
+  onSelectSection,
   collapsed,
-  onCollapse,
-  mobileOpen,
-  onMobileClose,
-}: {
-  active: SectionId;
-  onSelect: (id: SectionId) => void;
-  collapsed: boolean;
-  onCollapse: () => void;
-  mobileOpen: boolean;
-  onMobileClose: () => void;
-}) {
+  onToggleCollapse,
+}: SidebarProps) {
   return (
-    <>
-      {/* mobile overlay */}
-      {mobileOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-black/50 lg:hidden"
-          onClick={onMobileClose}
-          aria-hidden
-        />
+    <aside
+      className={cn(
+        "relative flex flex-col border-r border-slate-800 bg-slate-950 text-slate-200 transition-all duration-300",
+        collapsed ? "w-16" : "w-64",
       )}
-
-      <aside
-        className={cn(
-          "fixed inset-y-0 left-0 z-50 flex flex-col border-r border-sidebar-border bg-sidebar transition-[width,transform] duration-300",
-          collapsed ? "w-16" : "w-64",
-          mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0",
-        )}
-      >
-        <div className="flex h-14 items-center gap-2 border-b border-sidebar-border px-3">
-          <div className="flex size-8 shrink-0 items-center justify-center rounded-md bg-primary font-mono text-sm font-bold text-primary-foreground">
-            CG
+    >
+      {/* App Header / Logo Text */}
+      <div className="flex h-16 items-center border-b border-slate-800 px-4">
+        {!collapsed ? (
+          <div className="flex items-center space-x-2">
+            <span className="flex h-8 w-8 items-center justify-center rounded bg-cyan-600 font-bold text-white text-xs">
+              CG
+            </span>
+            <span className="font-semibold text-lg text-white tracking-wide">
+              Course Hub
+            </span>
           </div>
-          {!collapsed && (
-            <div className="flex min-w-0 flex-col leading-tight">
-              <span className="truncate text-sm font-semibold">Course Hub</span>
+        ) : (
+          <span className="mx-auto flex h-8 w-8 items-center justify-center rounded bg-cyan-600 font-bold text-white text-xs">
+            CG
+          </span>
+        )}
+      </div>
+
+      {/* Navigation Items */}
+      <nav className="flex-1 space-y-1 p-2">
+        {SECTIONS.map((section) => {
+          const isActive = activeSection === section.id;
+          return (
+            <button
+              key={section.id}
+              onClick={() => onSelectSection(section.id)}
+              className={cn(
+                "flex w-full items-center rounded-lg px-3 py-2.5 text-left text-sm font-medium transition-colors",
+                isActive
+                  ? "bg-slate-800/80 text-cyan-400 border-l-2 border-cyan-400"
+                  : "text-slate-400 hover:bg-slate-900 hover:text-slate-200",
+                collapsed && "justify-center px-0",
+              )}
+              title={collapsed ? section.title : undefined}
+            >
+              {!collapsed ? (
+                <div>
+                  <div className="font-medium leading-none">
+                    {section.title}
+                  </div>
+                  <div className="mt-1 text-xs text-slate-500 line-clamp-1">
+                    {section.description}
+                  </div>
+                </div>
+              ) : (
+                <span className="font-bold text-xs uppercase">
+                  {section.title.slice(0, 2)}
+                </span>
+              )}
+            </button>
+          );
+        })}
+      </nav>
+
+      {/* Sidebar Collapse Toggle (Only Icon Maintained) */}
+      <div className="border-t border-slate-800 p-2">
+        <button
+          onClick={onToggleCollapse}
+          className="flex w-full items-center justify-start rounded-lg px-3 py-2 text-sm font-medium text-slate-400 hover:bg-slate-900 hover:text-slate-200"
+        >
+          {collapsed ? (
+            <PanelLeftOpen className="h-5 w-5 text-slate-400" />
+          ) : (
+            <div className="flex items-center space-x-3">
+              <PanelLeftClose className="h-5 w-5 text-slate-400" />
+              <span>Collapse</span>
             </div>
           )}
-          <Button
-            size="icon-sm"
-            variant="ghost"
-            className="ml-auto lg:hidden"
-            onClick={onMobileClose}
-            aria-label="Close navigation"
-          >
-            <X />
-          </Button>
-        </div>
-
-        <nav className="flex flex-1 flex-col gap-1 overflow-y-auto p-2 scrollbar-thin">
-          {sections.map((s) => {
-            const Icon = s.icon;
-            const isActive = active === s.id;
-            return (
-              <button
-                key={s.id}
-                onClick={() => {
-                  onSelect(s.id);
-                  onMobileClose();
-                }}
-                title={collapsed ? s.label : undefined}
-                className={cn(
-                  "group flex items-center gap-3 rounded-md px-2.5 py-2 text-left text-sm transition-colors",
-                  isActive
-                    ? "bg-sidebar-accent text-sidebar-accent-foreground"
-                    : "text-sidebar-foreground/70 hover:bg-muted/60 hover:text-sidebar-foreground",
-                )}
-              >
-                <Icon
-                  className={cn(
-                    "size-4 shrink-0",
-                    isActive
-                      ? "text-cyan"
-                      : "text-muted-foreground group-hover:text-foreground",
-                  )}
-                />
-                {!collapsed && (
-                  <span className="flex min-w-0 flex-col">
-                    <span className="truncate font-medium">{s.short}</span>
-                    <span className="truncate text-[11px] text-muted-foreground">
-                      {s.desc}
-                    </span>
-                  </span>
-                )}
-                {isActive && !collapsed && (
-                  <span className="ml-auto h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" />
-                )}
-              </button>
-            );
-          })}
-        </nav>
-
-        <div className="border-t border-sidebar-border p-2">
-          <Button
-            size="sm"
-            variant="ghost"
-            onClick={onCollapse}
-            className="hidden w-full justify-start lg:flex"
-          >
-            {collapsed ? <PanelLeft /> : <PanelLeftClose />}
-            {!collapsed && <span>Collapse</span>}
-          </Button>
-        </div>
-      </aside>
-    </>
+        </button>
+      </div>
+    </aside>
   );
 }
