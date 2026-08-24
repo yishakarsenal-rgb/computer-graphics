@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
-import { Menu, Search, Cpu } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { ThemeToggle } from '@/components/theme-toggle'
-import { sections, type SectionId } from '@/lib/sections'
+import { Menu, Search, Cpu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { sections, type SectionId } from "@/lib/sections";
 
 export function Header({
   active,
@@ -12,14 +12,15 @@ export function Header({
   onToggleSidebar,
   progress,
 }: {
-  active: SectionId
-  query: string
-  onQuery: (v: string) => void
-  onToggleSidebar: () => void
-  progress: number
+  active: SectionId;
+  query: string;
+  onQuery: (v: string) => void;
+  onToggleSidebar: () => void;
+  progress: number;
 }) {
-  const current = sections.find((s) => s.id === active)
-  const searchable = active === 'notes' || active === 'sandbox' || active === 'cheatsheet'
+  const current = sections.find((s) => s.id === active);
+  const searchable =
+    active === "notes" || active === "sandbox" || active === "cheatsheet";
 
   return (
     <header className="sticky top-0 z-30 flex h-14 items-center gap-3 border-b border-border bg-background/80 px-3 backdrop-blur-md md:px-5">
@@ -38,8 +39,9 @@ export function Header({
           <Cpu className="size-4" />
         </div>
         <div className="hidden flex-col leading-none sm:flex">
-          <span className="text-sm font-semibold tracking-tight">Computer Graphics</span>
-          <span className="font-mono text-[10px] text-muted-foreground">COSC 362 · Lab Hub</span>
+          <span className="text-sm font-semibold tracking-tight">
+            Computer Graphics
+          </span>
         </div>
       </div>
 
@@ -69,11 +71,13 @@ export function Header({
               style={{ width: `${progress}%` }}
             />
           </div>
-          <span className="font-mono text-[10px] text-muted-foreground">{progress}%</span>
+          <span className="font-mono text-[10px] text-muted-foreground">
+            {progress}%
+          </span>
         </div>
 
         <ThemeToggle />
       </div>
     </header>
-  )
+  );
 }
