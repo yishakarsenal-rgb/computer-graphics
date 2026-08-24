@@ -1,70 +1,57 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { cn } from "@/lib/utils"
-import { type SectionId } from "@/lib/sections"
-import { Sidebar } from "@/components/sidebar"
-import { Header } from "@/components/header"
-import { Overview } from "@/components/sections/overview"
-import { StudyNotes } from "@/components/sections/study-notes"
-import { CodeSandbox } from "@/components/sections/code-sandbox"
-import { ExamEngine } from "@/components/sections/exam-engine"
-import { CheatSheet } from "@/components/sections/cheat-sheet"
+import React, { useState } from "react";
+import { Sidebar } from "@/components/sidebar";
+import { Header } from "@/components/header";
+import { SectionId, SECTIONS } from "@/lib/sections";
+import { Overview } from "@/components/sections/overview";
+import { StudyNotes } from "@/components/sections/study-notes";
+import { CodeSandbox } from "@/components/sections/code-sandbox";
+import { ExamEngine } from "@/components/sections/exam-engine";
+import { CheatSheet } from "@/components/sections/cheat-sheet";
 
-const PROGRESS: Record<SectionId, number> = {
-  overview: 5,
-  notes: 30,
-  sandbox: 60,
-  exam: 85,
-  cheatsheet: 100,
-}
+export default function Home() {
+  const [activeSection, setActiveSection] = useState<SectionId>("overview");
+  const [collapsed, setCollapsed] = useState(false);
 
-export default function Page() {
-  const [active, setActive] = useState<SectionId>("overview")
-  const [query, setQuery] = useState("")
-  const [collapsed, setCollapsed] = useState(false)
-  const [mobileOpen, setMobileOpen] = useState(false)
-
-  const select = (id: SectionId) => {
-    setActive(id)
-    setQuery("")
-  }
+  const currentSection = SECTIONS.find((s) => s.id === activeSection);
 
   return (
-    <div className="min-h-svh bg-background">
+    <div className="flex h-screen w-screen overflow-hidden bg-slate-950 font-sans text-slate-100">
+      {/* Sidebar - Persistent Left Navigation */}
       <Sidebar
-        active={active}
-        onSelect={select}
+        activeSection={activeSection}
+        onSelectSection={setActiveSection}
         collapsed={collapsed}
-        onCollapse={() => setCollapsed((c) => !c)}
-        mobileOpen={mobileOpen}
-        onMobileClose={() => setMobileOpen(false)}
+        onToggleCollapse={() => setCollapsed(!collapsed)}
       />
 
-      <div className={cn("transition-[padding] duration-300", collapsed ? "lg:pl-16" : "lg:pl-64")}>
+      {/* Main View Area */}
+      <div className="flex flex-1 flex-col overflow-hidden">
+        {/* Sticky Header at Top */}
         <Header
-          active={active}
-          query={query}
-          onQuery={setQuery}
-          onToggleSidebar={() => setMobileOpen(true)}
-          progress={PROGRESS[active]}
+          title={currentSection?.title || "Computer Graphics"}
+          subtitle={currentSection?.description}
         />
 
-        <main className="px-4 py-8 md:px-8 md:py-10">
-          {active === "overview" && <Overview onNavigate={select} />}
-          {active === "notes" && <StudyNotes query={query} />}
-          {active === "sandbox" && <CodeSandbox query={query} />}
-          {active === "exam" && <ExamEngine />}
-          {active === "cheatsheet" && <CheatSheet />}
+        {/* Scrollable Dynamic Body Content */}
+        <main className="flex-1 overflow-y-auto bg-slate-950">
+          {activeSection === "overview" && (
+            <Overview onSelectSection={setActiveSection} />
+          )}
+          {activeSection === "theory" && <StudyNotes />}
+          {activeSection === "lab" && <CodeSandbox />}
+          {activeSection === "exam" && <ExamEngine />}
+          {activeSection === "cheatsheet" && <CheatSheet />}
 
-          <footer className="mx-auto mt-16 max-w-5xl border-t border-border pt-6">
-            <p className="text-center font-mono text-[11px] text-muted-foreground">
-              Computer Graphics Course Hub · Built for interactive revision · Simulations approximate the
-              original BGI/graphics.h C++ programs
-            </p>
+          {/* Footer */}
+          <footer className="border-t border-slate-900 p-6 text-center text-xs text-slate-500">
+            Computer Graphics Course Hub · Built for interactive revision ·
+            Simulations approximate original BGI/graphics.h C++ programs — Made
+            by Yishak
           </footer>
         </main>
       </div>
     </div>
-  )
+  );
 }
