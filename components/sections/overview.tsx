@@ -30,7 +30,7 @@ export function Overview({
             Master Computer Graphics, from raster algorithms to live C++.
           </h1>
           <p className="mt-4 max-w-xl text-pretty leading-relaxed text-muted-foreground">
-            A single workspace that turns your course material into runnable
+            A single workspace that turns our course material into runnable
             simulations, an in-browser C++ compiler, timed mock exams, and a
             rendered formula reference.
           </p>
