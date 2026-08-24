@@ -38,10 +38,6 @@ export function Sidebar({
           mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0",
         )}
       >
-        <div className="flex h-14 items-center gap-2 border-b border-sidebar-border px-3">
-          <div className="flex size-8 shrink-0 items-center justify-center rounded-md bg-primary font-mono text-sm font-bold text-primary-foreground">
-            CG
-          </div>
           {!collapsed && (
             <div className="flex min-w-0 flex-col leading-tight">
               <span className="truncate text-sm font-semibold">Course Hub</span>
