@@ -17,8 +17,8 @@ export default function Home() {
   const currentSection = SECTIONS.find((s) => s.id === activeSection);
 
   return (
-    <div className="flex h-screen w-screen overflow-hidden bg-slate-950 font-sans text-slate-100">
-      {/* Sidebar - Persistent Left Navigation */}
+    <div className="flex h-screen w-screen overflow-hidden bg-white text-black dark:bg-black dark:text-white">
+      {/* Sidebar Navigation */}
       <Sidebar
         activeSection={activeSection}
         onSelectSection={setActiveSection}
@@ -26,16 +26,16 @@ export default function Home() {
         onToggleCollapse={() => setCollapsed(!collapsed)}
       />
 
-      {/* Main View Area */}
+      {/* Main Viewport Container */}
       <div className="flex flex-1 flex-col overflow-hidden">
-        {/* Sticky Header at Top */}
+        {/* Sticky Header at Very Top */}
         <Header
           title={currentSection?.title || "Computer Graphics"}
           subtitle={currentSection?.description}
         />
 
-        {/* Scrollable Dynamic Body Content */}
-        <main className="flex-1 overflow-y-auto bg-slate-950">
+        {/* Scrollable Body Content */}
+        <main className="flex-1 overflow-y-auto bg-white p-6 dark:bg-black">
           {activeSection === "overview" && (
             <Overview onSelectSection={setActiveSection} />
           )}
@@ -45,7 +45,7 @@ export default function Home() {
           {activeSection === "cheatsheet" && <CheatSheet />}
 
           {/* Footer */}
-          <footer className="border-t border-slate-900 p-6 text-center text-xs text-slate-500">
+          <footer className="mt-8 border-t border-slate-200 pt-6 text-center text-slate-500 text-xs dark:border-zinc-800 dark:text-zinc-500">
             Computer Graphics Course Hub · Built for interactive revision ·
             Simulations approximate original BGI/graphics.h C++ programs — Made
             by Yishak

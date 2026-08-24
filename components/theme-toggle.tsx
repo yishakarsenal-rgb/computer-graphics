@@ -1,20 +1,42 @@
 "use client";
 
-import * as React from "react";
-import { useTheme } from "next-themes";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    const darkActive = savedTheme ? savedTheme === "dark" : true;
+    setIsDark(darkActive);
+    if (darkActive) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    if (isDark) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setIsDark(false);
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setIsDark(true);
+    }
+  };
 
   return (
     <Button
       variant="outline"
       size="sm"
-      className="border-slate-800 bg-slate-900 text-xs text-slate-300 hover:bg-slate-800"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={toggleTheme}
+      className="border-slate-300 bg-white font-semibold text-black text-xs hover:bg-slate-100 dark:border-zinc-800 dark:bg-black dark:text-white dark:hover:bg-zinc-900"
     >
-      {theme === "dark" ? "Light Mode" : "Dark Mode"}
+      {isDark ? "Light Mode" : "Dark Mode"}
     </Button>
   );
 }
