@@ -1,7 +1,6 @@
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -21,11 +20,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  colorScheme: "dark light",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0c" },
-  ],
+  colorScheme: "dark",
+  themeColor: "#000000",
 };
 
 export default function RootLayout({
@@ -36,11 +32,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`bg-background ${geistSans.variable} ${jetbrainsMono.variable}`}
-      suppressHydrationWarning
+      className={`dark bg-black text-white ${geistSans.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="font-sans antialiased">
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className="bg-black text-white font-sans antialiased">
+        {children}
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>

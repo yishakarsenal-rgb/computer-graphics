@@ -2,16 +2,6 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #000000;
-    --card: #ffffff;
-    --card-foreground: #000000;
-    --border: #e4e4e7;
-    --muted: #f4f4f5;
-    --muted-foreground: #71717a;
-  }
-
-  .dark {
     --background: #000000;
     --foreground: #ffffff;
     --card: #000000;
@@ -36,9 +26,10 @@
   * {
     border-color: var(--border);
   }
+  html,
   body {
-    background-color: var(--background) !important;
-    color: var(--foreground) !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
     min-height: 100vh;
     margin: 0;
     padding: 0;
