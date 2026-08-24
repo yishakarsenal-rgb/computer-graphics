@@ -47,6 +47,15 @@ export function Sidebar({
               <span className="truncate text-sm font-semibold">Course Hub</span>
             </div>
           )}
+          <Button
+            size="icon-sm"
+            variant="ghost"
+            className="ml-auto lg:hidden"
+            onClick={onMobileClose}
+            aria-label="Close navigation"
+          >
+            <X />
+          </Button>
         </div>
 
         <nav className="flex flex-1 flex-col gap-1 overflow-y-auto p-2 scrollbar-thin">
