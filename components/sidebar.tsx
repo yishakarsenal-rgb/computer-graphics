@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SECTIONS, SectionId } from "@/lib/sections";
 
@@ -29,15 +29,15 @@ export function Sidebar({
       <div className="flex h-16 items-center border-b border-slate-800 px-4">
         {!collapsed ? (
           <div className="flex items-center space-x-2">
-            <span className="flex h-8 w-8 items-center justify-center rounded bg-cyan-600 font-bold text-white text-xs">
+            <span className="flex h-8 w-8 items-center justify-center rounded bg-cyan-600 font-bold text-xs text-white">
               CG
             </span>
-            <span className="font-semibold text-lg text-white tracking-wide">
+            <span className="font-semibold text-lg tracking-wide text-white">
               Course Hub
             </span>
           </div>
         ) : (
-          <span className="mx-auto flex h-8 w-8 items-center justify-center rounded bg-cyan-600 font-bold text-white text-xs">
+          <span className="mx-auto flex h-8 w-8 items-center justify-center rounded bg-cyan-600 font-bold text-xs text-white">
             CG
           </span>
         )}
@@ -54,7 +54,7 @@ export function Sidebar({
               className={cn(
                 "flex w-full items-center rounded-lg px-3 py-2.5 text-left text-sm font-medium transition-colors",
                 isActive
-                  ? "bg-slate-800/80 text-cyan-400 border-l-2 border-cyan-400"
+                  ? "border-l-2 border-cyan-400 bg-slate-800/80 text-cyan-400"
                   : "text-slate-400 hover:bg-slate-900 hover:text-slate-200",
                 collapsed && "justify-center px-0",
               )}
@@ -65,7 +65,7 @@ export function Sidebar({
                   <div className="font-medium leading-none">
                     {section.title}
                   </div>
-                  <div className="mt-1 text-xs text-slate-500 line-clamp-1">
+                  <div className="mt-1 line-clamp-1 text-xs text-slate-500">
                     {section.description}
                   </div>
                 </div>
@@ -79,17 +79,17 @@ export function Sidebar({
         })}
       </nav>
 
-      {/* Sidebar Collapse Toggle (Only Icon Maintained) */}
+      {/* Sidebar Collapse Toggle */}
       <div className="border-t border-slate-800 p-2">
         <button
           onClick={onToggleCollapse}
           className="flex w-full items-center justify-start rounded-lg px-3 py-2 text-sm font-medium text-slate-400 hover:bg-slate-900 hover:text-slate-200"
         >
           {collapsed ? (
-            <PanelLeftOpen className="h-5 w-5 text-slate-400" />
+            <ChevronRight className="h-5 w-5 text-slate-400" />
           ) : (
             <div className="flex items-center space-x-3">
-              <PanelLeftClose className="h-5 w-5 text-slate-400" />
+              <ChevronLeft className="h-5 w-5 text-slate-400" />
               <span>Collapse</span>
             </div>
           )}
