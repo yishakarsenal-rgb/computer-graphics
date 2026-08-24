@@ -3,30 +3,34 @@
 @tailwind utilities;
 
 @layer base {
-  /* Light Mode Base Styles: Pure White Background, Pure Black Text */
   :root {
-    --bg-main: #ffffff;
-    --bg-card: #ffffff;
-    --bg-sidebar: #ffffff;
-    --border-color: #e2e8f0;
-    --text-primary: #000000;
-    --text-secondary: #475569;
+    --background: #ffffff;
+    --foreground: #000000;
+    --card: #ffffff;
+    --card-foreground: #000000;
+    --border: #e4e4e7;
+    --muted: #f4f4f5;
+    --muted-foreground: #71717a;
   }
 
-  /* Dark Mode Base Styles: Pure Black Background, Pure White Text */
   .dark {
-    --bg-main: #000000;
-    --bg-card: #000000;
-    --bg-sidebar: #000000;
-    --border-color: #27272a;
-    --text-primary: #ffffff;
-    --text-secondary: #a1a1aa;
+    --background: #000000;
+    --foreground: #ffffff;
+    --card: #000000;
+    --card-foreground: #ffffff;
+    --border: #27272a;
+    --muted: #18181b;
+    --muted-foreground: #a1a1aa;
   }
+}
 
-  html,
+@layer base {
+  * {
+    @apply border-border;
+  }
   body {
-    background-color: var(--bg-main) !important;
-    color: var(--text-primary) !important;
+    background-color: var(--background) !important;
+    color: var(--foreground) !important;
     min-height: 100vh;
     margin: 0;
     padding: 0;

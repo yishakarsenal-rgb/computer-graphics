@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 
 export function ThemeToggle() {
   const [isDark, setIsDark] = useState(true);
@@ -30,13 +29,11 @@ export function ThemeToggle() {
   };
 
   return (
-    <Button
-      variant="outline"
-      size="sm"
+    <button
       onClick={toggleTheme}
-      className="border-slate-300 bg-white font-semibold text-black text-xs hover:bg-slate-100 dark:border-zinc-800 dark:bg-black dark:text-white dark:hover:bg-zinc-900"
+      className="rounded-md border border-zinc-300 bg-white px-3 py-1.5 text-xs font-semibold text-black hover:bg-zinc-100 dark:border-zinc-800 dark:bg-black dark:text-white dark:hover:bg-zinc-900"
     >
       {isDark ? "Light Mode" : "Dark Mode"}
-    </Button>
+    </button>
   );
 }
