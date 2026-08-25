@@ -25,7 +25,6 @@ export function Sidebar({
         collapsed ? "w-16" : "w-64",
       )}
     >
-      {/* App Header / Logo Text */}
       <div className="flex h-16 items-center border-b border-slate-200 px-4 dark:border-zinc-800">
         {!collapsed ? (
           <div className="flex items-center space-x-2">
@@ -43,7 +42,6 @@ export function Sidebar({
         )}
       </div>
 
-      {/* Navigation Items */}
       <nav className="flex-1 space-y-1 p-2">
         {SECTIONS.map((section) => {
           const isActive = activeSection === section.id;
@@ -79,7 +77,6 @@ export function Sidebar({
         })}
       </nav>
 
-      {/* Sidebar Collapse Toggle */}
       <div className="border-t border-slate-200 p-2 dark:border-zinc-800">
         <button
           onClick={onToggleCollapse}
