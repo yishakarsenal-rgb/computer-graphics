@@ -18,7 +18,6 @@ export default function Home() {
 
   return (
     <div className="flex h-screen w-screen overflow-hidden bg-white text-black dark:bg-black dark:text-white">
-      {/* Sidebar Navigation */}
       <Sidebar
         activeSection={activeSection}
         onSelectSection={setActiveSection}
