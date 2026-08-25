@@ -26,15 +26,12 @@ export default function Home() {
         onToggleCollapse={() => setCollapsed(!collapsed)}
       />
 
-      {/* Main Viewport Container */}
       <div className="flex flex-1 flex-col overflow-hidden">
-        {/* Sticky Header at Very Top */}
         <Header
           title={currentSection?.title || "Computer Graphics"}
           subtitle={currentSection?.description}
         />
 
-        {/* Scrollable Body Content */}
         <main className="flex-1 overflow-y-auto bg-white p-6 dark:bg-black">
           {activeSection === "overview" && (
             <Overview onSelectSection={setActiveSection} />
@@ -44,7 +41,6 @@ export default function Home() {
           {activeSection === "exam" && <ExamEngine />}
           {activeSection === "cheatsheet" && <CheatSheet />}
 
-          {/* Footer */}
           <footer className="mt-8 border-t border-slate-200 pt-6 text-center text-slate-500 text-xs dark:border-zinc-800 dark:text-zinc-500">
             Computer Graphics Course Hub · Built for interactive revision · Made
             by Yishak
