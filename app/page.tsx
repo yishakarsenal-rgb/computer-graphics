@@ -46,8 +46,7 @@ export default function Home() {
 
           {/* Footer */}
           <footer className="mt-8 border-t border-slate-200 pt-6 text-center text-slate-500 text-xs dark:border-zinc-800 dark:text-zinc-500">
-            Computer Graphics Course Hub · Built for interactive revision ·
-            Simulations approximate original BGI/graphics.h C++ programs — Made
+            Computer Graphics Course Hub · Built for interactive revision · Made
             by Yishak
           </footer>
         </main>
