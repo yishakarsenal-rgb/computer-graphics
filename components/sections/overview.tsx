@@ -10,7 +10,6 @@ interface OverviewProps {
 export function Overview({ onSelectSection }: OverviewProps) {
   return (
     <div className="space-y-8 p-6">
-      {/* Banner */}
       <div className="relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900 p-8">
         <div className="max-w-2xl space-y-4">
           <h1 className="text-3xl font-bold text-white">Computer Graphics</h1>
@@ -27,7 +26,6 @@ export function Overview({ onSelectSection }: OverviewProps) {
         </div>
       </div>
 
-      {/* Metrics Grid */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
           <div className="text-3xl font-bold text-white">4</div>
@@ -38,7 +36,7 @@ export function Overview({ onSelectSection }: OverviewProps) {
           <div className="mt-1 text-sm text-slate-400">C++ programs</div>
         </div>
         <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
-          <div className="text-3xl font-bold text-white">67</div>
+          <div className="text-3xl font-bold text-white">100</div>
           <div className="mt-1 text-sm text-slate-400">Exam questions</div>
         </div>
         <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
@@ -47,7 +45,6 @@ export function Overview({ onSelectSection }: OverviewProps) {
         </div>
       </div>
 
-      {/* Navigation Cards */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <button
           onClick={() => onSelectSection("theory")}
@@ -66,7 +63,7 @@ export function Overview({ onSelectSection }: OverviewProps) {
           className="flex flex-col rounded-xl border border-slate-800 bg-slate-900/50 p-6 text-left transition-colors hover:border-slate-700 hover:bg-slate-900"
         >
           <div className="text-base font-semibold text-white">
-            Code & Execution Sandbox
+            Code and Execution Sandbox
           </div>
           <div className="mt-1 text-sm text-slate-400">
             Visualizer + live C++ runner
@@ -90,7 +87,7 @@ export function Overview({ onSelectSection }: OverviewProps) {
           className="flex flex-col rounded-xl border border-slate-800 bg-slate-900/50 p-6 text-left transition-colors hover:border-slate-700 hover:bg-slate-900"
         >
           <div className="text-base font-semibold text-white">
-            Formula & Algorithm Cheat Sheet
+            Formula and Algorithm Cheat Sheet
           </div>
           <div className="mt-1 text-sm text-slate-400">
             Visual formula reference
