@@ -16,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Computer Graphics Course and Lab Hub",
   description:
-    "Interactive Computer Graphics course platform: study notes, live C++ graphics visualizer, in-browser C++ runner, timed mock exams, and an algorithm cheat sheet.",
+    "Interactive Computer Graphics course platform: study notes, live C++ graphics visualizer, in-browser C++ runner, timed mock exams, and cheat sheet.",
 };
 
 export const viewport: Viewport = {
