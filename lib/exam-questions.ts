@@ -12,7 +12,7 @@ export type Question = {
   category: Category;
   question: string;
   options: string[];
-  answer: number; // index into options
+  answer: number;
   explanation: string;
 };
 
