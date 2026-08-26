@@ -767,7 +767,6 @@ const bank: Omit<Question, "id">[] = [
   },
 ];
 
-// Duplicate-and-vary the bank up to 100 questions so the engine can sample a full set.
 export function buildQuestionBank(): Question[] {
   const withIds: Question[] = bank.map((q, i) => ({ ...q, id: i + 1 }));
   return withIds;
