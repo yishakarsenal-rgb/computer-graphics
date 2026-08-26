@@ -641,7 +641,6 @@ const bank: Omit<Question, "id">[] = [
       "False — transformation order matters; rotating then translating differs from the reverse.",
   },
 
-  // ---------- 3D & Projections ----------
   {
     type: "mcq",
     category: "3D & Projections",
