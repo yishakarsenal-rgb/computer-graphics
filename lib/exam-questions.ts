@@ -17,10 +17,7 @@ export type Question = {
 };
 
 const TF = ["True", "False"];
-
-// Raw bank (answer + explanation supplied). IDs assigned on load.
 const bank: Omit<Question, "id">[] = [
-  // ---------- Overview & Hardware ----------
   {
     type: "mcq",
     category: "Overview & Hardware",
