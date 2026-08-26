@@ -349,7 +349,6 @@ const bank: Omit<Question, "id">[] = [
       "False — DDA rounds each computed coordinate to the nearest integer to plot a pixel.",
   },
 
-  // ---------- Circle & Ellipse ----------
   {
     type: "mcq",
     category: "Circle & Ellipse",
