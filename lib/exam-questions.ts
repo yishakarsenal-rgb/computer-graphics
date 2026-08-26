@@ -477,7 +477,6 @@ const bank: Omit<Question, "id">[] = [
       "False — the decision-parameter approach avoids square roots, using only integer additions.",
   },
 
-  // ---------- 2D Transforms & Clipping ----------
   {
     type: "mcq",
     category: "2D Transforms & Clipping",
