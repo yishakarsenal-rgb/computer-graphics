@@ -203,7 +203,6 @@ const bank: Omit<Question, "id">[] = [
       "True — one bit per pixel (on/off) suffices for monochrome; colour needs multiple bit planes.",
   },
 
-  // ---------- Line Algorithms ----------
   {
     type: "mcq",
     category: "Line Algorithms",
