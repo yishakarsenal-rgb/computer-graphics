@@ -180,7 +180,6 @@ export function ExamEngine() {
           </div>
         </div>
 
-        {/* Question Card */}
         <div className="rounded-lg border border-zinc-800 bg-black p-6">
           <div className="mb-6 flex items-center gap-2 border-b border-zinc-800/60 pb-4">
             <span className="rounded bg-zinc-900 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-zinc-400">
