@@ -140,7 +140,6 @@ export function CodeSandbox({ query }: { query: string }) {
         </p>
       </div>
 
-      {/* Tabs */}
       <div className="flex w-full max-w-md items-center gap-1 rounded-lg border border-border bg-muted/40 p-1">
         <button
           onClick={() => setTab("visualizer")}
