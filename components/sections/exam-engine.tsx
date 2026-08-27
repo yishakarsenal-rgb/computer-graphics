@@ -149,7 +149,6 @@ export function ExamEngine() {
     const lowTime = timeLeft <= 60;
     return (
       <div className="mx-auto max-w-3xl pb-12">
-        {/* Fixed Timer Header */}
         <div className="sticky top-0 z-20 mb-6 border-b border-zinc-800 bg-black/95 py-4 backdrop-blur">
           <div className="flex items-center justify-between gap-4">
             <div className="font-mono text-sm text-muted-foreground">
