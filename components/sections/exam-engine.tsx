@@ -266,7 +266,6 @@ export function ExamEngine() {
           )}
         </div>
 
-        {/* Question Selector Dots */}
         <div className="mt-6 flex flex-wrap gap-1.5 rounded-lg border border-zinc-900 bg-zinc-950/50 p-3">
           {questions.map((qq, i) => (
             <button
