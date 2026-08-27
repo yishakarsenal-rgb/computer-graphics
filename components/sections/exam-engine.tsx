@@ -290,7 +290,6 @@ export function ExamEngine() {
     );
   }
 
-  // Review Phase
   const pct = Math.round((score / questions.length) * 100);
   return (
     <div className="mx-auto max-w-3xl py-6">
