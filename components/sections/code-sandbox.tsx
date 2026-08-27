@@ -42,7 +42,6 @@ function Visualizer({ query }: { query: string }) {
 
   return (
     <div className="grid grid-cols-1 gap-4 lg:grid-cols-[240px_1fr]">
-      {/* File explorer */}
       <div className="flex max-h-[640px] flex-col overflow-y-auto rounded-lg border border-border bg-card p-2 scrollbar-thin lg:sticky lg:top-20">
         <div className="flex items-center gap-2 px-2 py-1.5 font-mono text-[11px] uppercase tracking-wide text-muted-foreground">
           <Folder className="size-3.5" />
