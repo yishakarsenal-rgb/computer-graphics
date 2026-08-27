@@ -237,7 +237,6 @@ export function ExamEngine() {
           </div>
         </div>
 
-        {/* Footer Navigation */}
         <div className="mt-6 flex items-center justify-between gap-4">
           <Button
             variant="outline"
