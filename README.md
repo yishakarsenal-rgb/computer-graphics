@@ -50,4 +50,4 @@ Chapter 4: 3D Graphics & Projections
 
 - Code Editor: Monaco Editor
 
-- Canvas Engine: HTML5 Canvas / WebGL
+
