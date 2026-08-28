@@ -47,7 +47,3 @@ Chapter 4: 3D Graphics & Projections
 - Styling: Tailwind CSS
 
 - UI Components: Shadcn UI & Lucide React Icons
-
-- Code Editor: Monaco Editor
-
-
