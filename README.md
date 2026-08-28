@@ -37,5 +37,3 @@ Chapter 4: 3D Graphics & Projections
 - Exam Controls: Configurable countdown timers, question flagging, and dynamic progress grids.
 
 - Analytics: Detailed score breakdowns, performance metrics by topic, and complete answer explanations.
-
-# Tech Stack
