@@ -45,5 +45,3 @@ Chapter 4: 3D Graphics & Projections
 - Library: React
 
 - Styling: Tailwind CSS
-
-- UI Components: Shadcn UI & Lucide React Icons
