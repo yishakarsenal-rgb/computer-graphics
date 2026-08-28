@@ -43,5 +43,3 @@ Chapter 4: 3D Graphics & Projections
 - Framework: Next.js (App Router)
 
 - Library: React
-
-- Styling: Tailwind CSS
