@@ -41,5 +41,3 @@ Chapter 4: 3D Graphics & Projections
 # Tech Stack
 
 - Framework: Next.js (App Router)
-
-- Library: React
