@@ -41,8 +41,7 @@ export default function Home() {
           {activeSection === "cheatsheet" && <CheatSheet />}
 
           <footer className="mt-8 border-t border-slate-200 pt-6 text-center text-slate-500 text-xs dark:border-zinc-800 dark:text-zinc-500">
-            Computer Graphics Course Hub · Built for interactive revision · Made
-            by Yishak
+            Computer Graphics Course Hub · Made by Yishak
           </footer>
         </main>
       </div>
