@@ -59,7 +59,6 @@ int main() {
 #include <cmath>
 using namespace std;
 
-// Bresenham line for 0 < slope < 1
 int main() {
     int x1 = 0, y1 = 0, x2 = 10, y2 = 6;
     int dx = x2 - x1, dy = y2 - y1;
