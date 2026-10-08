@@ -38,7 +38,6 @@ int main() {
 #include <cmath>
 using namespace std;
 
-// DDA line rasteriser — prints the plotted integer pixels
 int main() {
     int x1 = 2, y1 = 2, x2 = 12, y2 = 8;
     int dx = x2 - x1, dy = y2 - y1;
