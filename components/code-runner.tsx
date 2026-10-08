@@ -78,7 +78,6 @@ int main() {
     code: `#include <iostream>
 using namespace std;
 
-// 2D translation + scaling using homogeneous coordinates
 int main() {
     double p[3] = {3, 4, 1};      // point (3,4)
     double tx = 5, ty = -2, sx = 2, sy = 2;
